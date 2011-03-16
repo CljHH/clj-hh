@@ -1,0 +1,13 @@
+<!ELEMENT queue-entries (queue)*>
+<!ELEMENT total-storage-limit (#PCDATA)>
+<!ELEMENT queue (name, rate, bucket-size?, max-concurrent-requests?, retry-parameters?)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT rate (#PCDATA)>
+<!ELEMENT bucket-size (#PCDATA)>
+<!ELEMENT max-concurrent-requests (#PCDATA)>
+<!ELEMENT retry-parameters (task-retry-limit?, task-age-limit?, min-backoff-seconds?, max-backoff-seconds?, max-doublings?)>
+<!ELEMENT task-retry-limit (#PCDATA)>
+<!ELEMENT task-age-limit (#PCDATA)>
+<!ELEMENT min-backoff-seconds (#PCDATA)>
+<!ELEMENT max-backoff-seconds (#PCDATA)>
+<!ELEMENT max-doublings (#PCDATA)>
