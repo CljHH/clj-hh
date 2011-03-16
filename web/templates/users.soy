@@ -1,0 +1,21 @@
+{namespace net.cljhh.user}
+
+/**
+ * Renders the user list.
+ * @param users
+ */
+{template .list}
+  <html>
+    <head>
+      <title>Members of the Clojure Group Hamburg</title>
+      <link rel="stylesheet" type="text/css" href="/css/users.css" />
+    </head>
+    <body>
+      <ul class="user-list">
+        {foreach $user in $users}
+          <li>{$user.lastname}, {$user.firstname}</li>
+        {/foreach}
+      </ul>
+    </body>
+  </html>
+{/template}

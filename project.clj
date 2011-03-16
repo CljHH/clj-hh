@@ -18,5 +18,5 @@
                      :servlet-name       "CljHH"
                      :context-path       "/*"
                      :servlet-path-info? true}
-  :gae              {:resources  ["web/WEB-INF" "web/templates"]}
+  :gae              {:resources  ["web/WEB-INF" "web/templates" "web/css"]}
   :resources-path   "war")
