@@ -20,7 +20,7 @@
 (defn- add-files-to-builder
   "Adds all .soy files in war/templates to the supplied SoyFileSet$Builder and returns it"
   [builder]
-  (let [file-filter (proxy [FilenameFilter] [] (accept [file name] (.endsWith name ".soy")))
+  (let [file-filter (reify java.io.FilenameFilter (accept [_ file name] (.endsWith name ".soy")))
         directory (or (file-if-exists "web/templates")
                       (file-if-exists "templates"))
         files (.listFiles directory file-filter)]
