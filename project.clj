@@ -16,10 +16,22 @@
                      [ring-mock "0.1.1"]
                      [midje "1.1-alpha-3"]
                      [leiningen-midje "1.0.0-SNAPSHOT"]]
+                     [lein-goog "0.1.0"]
+                     [com.google/soy-to-js-src "20100708"]
+                     [com.google/closure-compiler "20110119"]]
   :ring             {:handler            net.cljhh.core/clj-hh-routes
                      :servlet-class      net.cljhh.servlet
                      :servlet-name       "CljHH"
                      :context-path       "/*"
                      :servlet-path-info? true}
+  :goog             {:src-files           ["user.js"]
+                     :deps-compiler       "build/closure/calcdeps.py"
+                     :javascript-compiler "lib/closure-compiler-20110119.jar"
+                     :javascript-input    "web/js"
+                     :javascript-output   "war/js"
+                     :template-compiler   "lib/soy-to-js-src-20100708.jar"
+                     :template-input      "web/templates"
+                     :template-output     "web/js"
+                     :template-prefix     "templates-"}
   :gae              {:resources  ["web/WEB-INF" "web/templates" "web/css"]}
   :resources-path   "war")
