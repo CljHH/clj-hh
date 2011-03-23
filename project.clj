@@ -13,7 +13,8 @@
                      [swank-clojure "1.2.1"]
                      [lein-ring "0.3.3"]
                      [lein-gae "0.1.0"]
-		     [midje "1.0.1"]]
+                     [ring-mock "0.1.1"]
+		             [midje "1.0.1"]]
   :ring             {:handler            net.cljhh.core/clj-hh-routes
                      :servlet-class      net.cljhh.servlet
                      :servlet-name       "CljHH"
