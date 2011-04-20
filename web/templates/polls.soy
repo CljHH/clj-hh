@@ -1,0 +1,24 @@
+{namespace net.cljhh.polls}
+
+/**
+ * Renders poll starting page
+ * @param? development -> is the server running in development mode?
+ */
+{template .list}
+  <html>
+    <head>
+      <title>Most recent Poll</title>
+        {if $development}
+          <script type="text/javascript" src="/js/goog/base.js"></script>
+          <script type="text/javascript" src="/js/deps.js"></script>
+        {/if}
+          <script type="text/javascript" src="/js/polls.js"></script>
+      <link rel="stylesheet" type="text/css" href="/css/polls.css" />
+    </head>
+    <body>
+      <script text="text/javascript">
+	Poll.init();
+      </script>
+    </body>
+  </html>
+{/template}

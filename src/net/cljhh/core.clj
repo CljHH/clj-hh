@@ -7,10 +7,10 @@
 
 (defroutes clj-hh-routes
   (GET "/users" _ (templates/render "user" "list" {:users (users/get-all)}))
+  (GET "/polls" _ (templates/render "polls" "list" {}))
   (GET "/*" _ (templates/render "welcome" {})))
 
 (def app
   (-> clj-hh-routes
       (cookies/wrap-cookies)
       (params/wrap-params)))
-
