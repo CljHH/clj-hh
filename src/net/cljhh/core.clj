@@ -12,5 +12,6 @@
 
 (def app
   (-> clj-hh-routes
+      (templates/wrap-templates "net.cljhh")
       (cookies/wrap-cookies)
       (params/wrap-params)))

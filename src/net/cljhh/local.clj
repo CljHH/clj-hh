@@ -1,6 +1,7 @@
 (ns net.cljhh.local
   (:require [com.freiheit.gae.local-dev :as local-dev]
-            [net.cljhh.core :as core]))
+            [net.cljhh.core :as core]
+	    [net.cljhh.templates :as templates]))
 
 (defn run-local []
   (local-dev/init-app-engine)
