@@ -8,6 +8,8 @@
                      [compojure "0.6.2"]
                      [ring/ring-core "0.3.7"]
                      [com.google/soy-clj "20100708"]]
+                     [com.google/soy-to-js-src "20100708"]
+                     [com.google/closure-compiler "20110119"]
   :dev-dependencies [[com.google.appengine/appengine-local-runtime "1.4.0"]
                      [marginalia "0.5.0"]
                      [swank-clojure "1.2.1"]
