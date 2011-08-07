@@ -2,18 +2,10 @@
 
 ## Usage
 
+### Clone the repository and run lein deps.
+if you get missing dependencies, run `install-artifacts.sh <folder of appengine sdk> 1.5.2`
+to install the missing dependencies
 
-###local development
-run `(net.clj-hh.local/run-local)` from a repl.
-
-
-###development server (to check in a more "real" enviorment before deploying)
-run `build/dev_server.sh`.
-
-###deploying to the appengine
-build the needed files using `lein gae prepare`
-
-then run `build/deploy.sh`
 
 ## License
 
