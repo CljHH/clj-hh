@@ -4,6 +4,7 @@
    [clj-hh.return-value :as return-value]
    [clj-hh.session :as session]
    [clj-hh.user :as user]
+   [clj-hh.utils.time :as time-utils]
    [ring.util.response :as response]))
 
 (defn ^{:private true
@@ -23,13 +24,12 @@
         :doc     "Logs the user in."}
   login-user
   [request email]
-  (merge (session/store-data-in-session! request {:user email})
+  (merge (session/create-session-for-user email)
          (response/redirect "/"))  )
 
 (defn ^{:private true
         :added   0.1
-        :doc     "Logs the user in if he already has an account,
-                  otherwise creates one."}
+        :doc     "Logs the user in if he already has an account, otherwise creates one."}
   login-or-create-user
   [request]
   (let [google-user (user-service/current-user)
