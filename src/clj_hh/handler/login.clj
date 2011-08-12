@@ -33,9 +33,10 @@
   login-or-create-user
   [request]
   (let [google-user (user-service/current-user)
-        email       (user-service/get-email google-user)]
-    (if-let [user (user/get-by-email email)]
-      (login-user request email)
+        email       (user-service/get-email google-user)
+        user-result (user/get-by-email email)]
+    (if [return-value/success? user-result]
+      (login-user request (return-value/success-value user-result) email)
       (create-user request google-user))))
 
 (defn ^{:added 0.1

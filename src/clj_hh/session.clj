@@ -1,6 +1,7 @@
 (ns clj-hh.session
   (:require
    [appengine-magic.services.user :as user-service]
+   [clj-hh.return-value :as return-value]
    [clj-hh.user :as user]
    [clj-hh.utils.time :as time-utils]
    [clj-hh.utils.url :as url-utils]
@@ -68,8 +69,11 @@
         :doc   "Get's the current user that is logged in or nil if not logged in."}
   current-user
   [request]
-  (-?> (get-data-from-session request :user)
-       (user/get-by-email)))
+  (let [result (-?> (get-data-from-session request :user)
+                    (user/get-by-email))]
+    (if (return-value/success? result)
+      (return-value/success-value result)
+      nil)))
 
 (defn ^{:added 0.1
         :doc   "Check's if the user is logged in."}

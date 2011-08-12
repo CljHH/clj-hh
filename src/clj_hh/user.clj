@@ -36,4 +36,7 @@
         :doc   "Fetches the user with the specified email from the datastore."}
   get-by-email
   [email]
-  (datastore-service/retrieve User email))
+  (let [user (datastore-service/retrieve User email)]
+    (if user
+      (return-value/success user)
+      (return-value/error :not-found email))))
