@@ -3,3 +3,5 @@ pom.xml
 lib
 classes
 *~
+.emacs.desktop
+.emacs.desktop.lock
