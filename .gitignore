@@ -5,3 +5,4 @@ classes
 *~
 .emacs.desktop
 .emacs.desktop.lock
+.livereload
