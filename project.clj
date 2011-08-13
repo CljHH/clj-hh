@@ -3,7 +3,8 @@
   :dependencies     [[org.clojure/clojure "1.2.1"]
                      [org.clojure/clojure-contrib "1.2.0"]
                      [compojure "0.6.5"]
-                     [ring/ring-core "0.3.11"]]
+                     [ring/ring-core "0.3.11"]
+                     [enlive "1.0.0"]]
   :dev-dependencies [[appengine-magic "0.4.3"]
                      [swank-clojure "1.4.0-SNAPSHOT"]])
 

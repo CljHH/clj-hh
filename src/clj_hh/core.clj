@@ -2,6 +2,7 @@
   (:require
    [appengine-magic.core :as ae]
    [appengine-magic.multipart-params :as multipart]
+   [clj-hh.handler.index :as index-handler]
    [clj-hh.handler.login :as login-handler]
    [clj-hh.session :as session]
    [compojure.core :as compojure]
@@ -9,9 +10,7 @@
 
 
 (compojure/defroutes clj-hh-routes
-  (compojure/GET "/" _   {:status  200
-                          :headers {"Content-Type" "text/plain"}
-                          :body    "Hello, Clojure Group!"})
+  (compojure/GET "/" _   index-handler/index)
   (compojure/GET "/login" _ login-handler/handle-login)
   (compojure/GET "/test/login" _ (session/only-logged-in
                                   (fn [request]
