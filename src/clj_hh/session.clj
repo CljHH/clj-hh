@@ -7,9 +7,7 @@
    [clj-hh.utils.url :as url-utils]
    [ring.middleware.session :as ring-session]
    [ring.middleware.session.cookie :as ring-session-cookie]
-   [ring.util.response :as response])
-  (:use
-   [clojure.contrib.core :only [-?>]]))
+   [ring.util.response :as response]))
 
 (def ^{:private true
        :added   0.1
@@ -38,9 +36,9 @@
 
 (defn ^{:added 0.1
         :doc   "Closes the session."}
-  close-session!
+  close-session
   [request]
-  (assoc request :session nil))
+  (assoc {} :session nil))
 
 (defn ^{:added 0.1
         :doc   "Extends the session timeout to 30minutes from now."}
@@ -54,7 +52,7 @@
         :doc   "Checks if the session timeout was reached."}
   session-timeout-reached?
   [request]
-  (let [valid-until (get-data-from-session request :valid-until)
+  (let [valid-until (or (get-data-from-session request :valid-until) 0)
         now         (time-utils/make-timestamp)]
     (> valid-until now)))
 
@@ -69,7 +67,7 @@
         :doc   "Get's the current user that is logged in or nil if not logged in."}
   current-user
   [request]
-  (let [result (-?> (get-data-from-session request :user)
+  (let [result (-> (get-data-from-session request :user)
                     (user/get-by-email))]
     (if (return-value/success? result)
       (return-value/success-value result)
@@ -79,10 +77,8 @@
         :doc   "Check's if the user is logged in."}
   user-logged-in?
   [request]
-  (let [valid-until (get-data-from-session request :valid-until)
-        now         (time-utils/make-timestamp)]
-    (and (not (nil? (current-user request)))
-         ( > valid-until now))))
+  (and (not (nil? (current-user request)))
+       (not (session-timeout-reached? request))))
 
 (defn ^{:added 0.1
         :doc   "If the user is not currently logged in, redirects to the login page,

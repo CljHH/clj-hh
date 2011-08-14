@@ -2,6 +2,6 @@
   (:require
    [net.cgrand.enlive-html :as html]))
 
-(html/deftemplate index "templates/index.html"
+(html/deftemplate show-index "templates/index.html"
   [request])
 

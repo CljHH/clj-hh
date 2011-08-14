@@ -4,14 +4,17 @@
    [appengine-magic.multipart-params :as multipart]
    [clj-hh.handler.index :as index-handler]
    [clj-hh.handler.login :as login-handler]
+   [clj-hh.handler.profile :as profile-handler]
    [clj-hh.session :as session]
    [compojure.core :as compojure]
    [ring.middleware.params :as params]))
 
 
 (compojure/defroutes clj-hh-routes
-  (compojure/GET "/" _   index-handler/index)
+  (compojure/GET "/" _   index-handler/show-index)
+  (compojure/GET "/profile" _ (session/only-logged-in profile-handler/show-profile))
   (compojure/GET "/login" _ login-handler/handle-login)
+  (compojure/GET "/logout" _ login-handler/handle-logout)
   (compojure/GET "/test/login" _ (session/only-logged-in
                                   (fn [request]
                                     (let [user (session/current-user request)]

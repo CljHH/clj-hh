@@ -5,6 +5,7 @@
    [clj-hh.session :as session]
    [clj-hh.user :as user]
    [clj-hh.utils.time :as time-utils]
+   [clj-hh.utils.url :as url-utils]
    [ring.util.response :as response]))
 
 (defn ^{:private true
@@ -24,7 +25,7 @@
         :doc     "Logs the user in."}
   login-user
   [request email]
-  (merge (session/create-session-for-user email)
+  (merge (session/create-session-for-user request email)
          (response/redirect "/"))  )
 
 (defn ^{:private true
@@ -36,7 +37,7 @@
         email       (user-service/get-email google-user)
         user-result (user/get-by-email email)]
     (if [return-value/success? user-result]
-      (login-user request (return-value/success-value user-result) email)
+      (login-user request email)
       (create-user request google-user))))
 
 (defn ^{:added 0.1
@@ -50,4 +51,13 @@
       ;;logged into a google account but not into clj-hh
       (login-or-create-user request)
       ;;not logged into a google account
-      (response/redirect (user-service/login-url :destination "/login")))))
+      (let [continue-url (url-utils/with-continue-url "/login" (url-utils/continue-url-from-request request))]
+        (response/redirect (user-service/login-url :destination continue-url))))))
+
+(defn ^{:added 0.1
+        :doc   "Request handler for loggin an user out"}
+  handle-logout
+  [request]
+  (merge (session/close-session request)
+         (response/redirect "/")))
+
