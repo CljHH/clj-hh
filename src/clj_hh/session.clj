@@ -13,7 +13,7 @@
        :added   0.1
        :doc     "The key used to encrypt the session cookie."}
   *session-encryption-key*
-  "loVeic5oes3ohd2Ygeej0Fee")
+  "loVeic5oes3ohd2Y")
 
 (defn ^{:added 0.1
         :doc   "Gets data from the session.
