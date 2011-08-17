@@ -38,7 +38,7 @@ LivereloadBackground.prototype = {
     },
 
     alert: function(message) {
-        alert(message);
+        console.error(message);
     },
 
     log: function(message) {
