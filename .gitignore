@@ -6,3 +6,4 @@ classes
 .emacs.desktop
 .emacs.desktop.lock
 .livereload
+war/WEB-INF/appengine-generated

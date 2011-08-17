@@ -36,7 +36,7 @@
   (let [google-user (user-service/current-user)
         email       (user-service/get-email google-user)
         user-result (user/get-by-email email)]
-    (if [return-value/success? user-result]
+    (if (return-value/success? user-result)
       (login-user request email)
       (create-user request google-user))))
 
