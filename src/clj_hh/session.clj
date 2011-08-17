@@ -90,6 +90,11 @@
       (apply f request params)
       (response/redirect (url-utils/with-continue-url "/login" (:uri request))))))
 
+(defn with-user
+  [f & params]
+  (fn [request]
+    (apply f request (current-user request) params)))
+
 (defn ^{:added 0.1
         :doc   "Wraps the application with a session stored in an encrypted cookie."}
   wrap-session
