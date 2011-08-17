@@ -25,8 +25,9 @@
         :doc     "Logs the user in."}
   login-user
   [request email]
+
   (merge (session/create-session-for-user request email)
-         (response/redirect "/"))  )
+	 (response/redirect (url-utils/continue-url-from-request request))))
 
 (defn ^{:private true
         :added   0.1
@@ -46,7 +47,7 @@
   [request]
   (if (session/user-logged-in? request)
     ;;already logged into clj-hh
-    (response/redirect "/")
+    (response/redirect (url-utils/continue-url-from-request request))
     (if (user-service/user-logged-in?)
       ;;logged into a google account but not into clj-hh
       (login-or-create-user request)
