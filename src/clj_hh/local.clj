@@ -3,5 +3,5 @@
             [clj-hh.core :as core]))
 
 (defn run-local
-  []
-  (ae/serve core/clj-hh-app))
+  [ & {:keys [port] :or {port 8080}}]
+  (ae/serve core/clj-hh-app :port port))
