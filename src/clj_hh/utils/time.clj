@@ -21,10 +21,12 @@
   [& _]
   (date-time->timestamp (date/now)))
 
+(def day-format (format/formatter "E dd.MM."))
+
 (defn render-day
   [d]
-  (-> (:date format/formatters)
-      (format/with-zone  hamburg-zone)
+  (-> day-format
+      (format/with-zone hamburg-zone)
       (format/unparse d)))
 
 (defn render-time
