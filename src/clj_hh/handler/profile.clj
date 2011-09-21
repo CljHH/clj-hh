@@ -13,6 +13,10 @@
   [:div.github :span.value] (html/content (:github user))
   [:div.last_active :span.value] (html/content (:last-active user)))
 
+(defn show-own-profile
+  [request user]
+  (show-profile-template user))
+
 (defn show-profile
  [request user id]
   (if (= id (:name user))
@@ -22,8 +26,4 @@
                  (return-value/success-value person-result))]
 
       (show-profile-template person))))
-
-(defn show-own-profile
-  [request user]
-  (show-profile-template user))
 
