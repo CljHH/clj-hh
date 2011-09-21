@@ -10,7 +10,17 @@
   <body id="index">
     <section id="header">
     </section>
-    <h1>Willkommen bei der Clojure Group Hamburg</h1>
+    <h1>Wilkommen bei der Clojure Group Hamburg</h1>
+    <form id="post-broadcast" action="/broadcast" method="POST">
+      <textarea name="text"/>
+      <input type="submit" value="abschicken"/>
+    </form>
+    <ul class="broadcasts">
+      <li class="boardcast">
+        <div class="text">Lorem Ipsum</div>
+        <div class="user">example@example.com</div>
+      </li>
+    </ul>
     <script type="text/javascript">
       livereload.run();
     </script>
