@@ -5,6 +5,8 @@
   (:import
    [org.joda.time DateTime]))
 
+(def hamburg-zone (date/time-zone-for-id "Europe/Berlin"))
+
 (defn timestamp->date-time
   [ts]
   (DateTime. ts))
@@ -21,10 +23,10 @@
 
 (defn render-day
   [d]
-  (-> (:date format/formatters)
+  (-> (:date (format/with-zone format/formatters hamburg-zone))
       (format/unparse d)))
 
 (defn render-time
   [d]
-  (-> (:hour-minute format/formatters)
+  (-> (:hour-minute (format/with-zone format/formatters hamburg-zone))
       (format/unparse d)))
