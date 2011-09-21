@@ -43,3 +43,15 @@
         (return-value/success user)
         (return-value/error :not-found email)))
     (return-value/error :empty-email)))
+
+(defn ^{:added 0.1
+        :doc   "Fetches the user with the specified name from the datastore."}
+  get-by-name
+  [name]
+  (if name
+    (let [user (first (datastore-service/query :kind User
+                                               :filter (= :name name)))]
+      (if user
+        (return-value/success user)
+        (return-value/error :not-found name)))
+    (return-value/error :empty-name)))
