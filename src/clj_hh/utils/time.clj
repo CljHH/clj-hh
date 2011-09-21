@@ -1,8 +1,8 @@
 (ns clj-hh.utils.time
-  (:import [java.util Date]))
+  (:require [clj-time.core :as date]))
 
 (defn ^{:added 0.1
         :doc   "Creates a timestamp for the current time."}
   make-timestamp
   [& _]
-  (.getTime (java.util.Date.)))
+  (.getMillis (date/now)))
