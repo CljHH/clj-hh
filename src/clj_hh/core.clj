@@ -15,7 +15,7 @@
   (compojure/GET "/" _   index-handler/show-index)
   (compojure/GET "/profile" _ (session/only-logged-in (session/with-user profile-handler/show-profile)))
   (compojure/GET "/login" _ login-handler/handle-login)
-  (compojure/GET "/logout" _ login-handler/handle-logout))
+  (compojure/GET "/logout" _ login-handler/handle-logout)
   (compojure/POST "/broadcast" _ (session/only-logged-in broadcast-handler/post-broadcast)))
 
 (def clj-hh-app-handler
