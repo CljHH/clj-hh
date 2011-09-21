@@ -23,10 +23,12 @@
 
 (defn render-day
   [d]
-  (-> (:date (format/with-zone format/formatters hamburg-zone))
+  (-> (:date format/formatters)
+      (format/with-zone  hamburg-zone)
       (format/unparse d)))
 
 (defn render-time
   [d]
-  (-> (:hour-minute (format/with-zone format/formatters hamburg-zone))
+  (-> (:hour-minute  format/formatters)
+      (format/with-zone hamburg-zone)
       (format/unparse d)))
