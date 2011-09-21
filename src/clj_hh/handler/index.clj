@@ -29,5 +29,6 @@
   (let [broadcasts (return-value/success-value (broadcast/get-broadcasts))
         next-meeting (meeting/next-meeting)
         logged-in? (session/user-logged-in? request)]
-    (render-index broadcasts next-meeting logged-in?)))
+    {:body (render-index broadcasts next-meeting logged-in?)
+     :headers {"Content-Type" "text/html;charset=utf-8"}}))
 
