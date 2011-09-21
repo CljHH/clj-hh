@@ -5,7 +5,8 @@
                      [compojure "0.6.5"]
                      [ring/ring-core "0.3.11"]
                      [enlive "1.0.0"]
-		     [clj-time "0.3.0"]]
+		     [clj-time "0.3.0"]
+                     [org.markdownj/markdownj "0.3.0-1.0.2b4"]]
   :dev-dependencies [[appengine-magic "0.4.3"]
                      [swank-clojure "1.4.0-SNAPSHOT"]])
 
