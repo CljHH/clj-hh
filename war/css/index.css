@@ -48,7 +48,7 @@ body {
 }
 
 #sidebar {
-	float : right;
+        display: inline-block;
 	width : 350 px;
 	border-style: none;
 	text-align: center;
@@ -63,6 +63,7 @@ body {
 }
 
 #middle {
+        display: inline-block;
 	text-align: left;
 	padding-left: 40 px;
 	clear: right;
