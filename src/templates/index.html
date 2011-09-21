@@ -1,28 +1,69 @@
-<html>
+<html class="no-js">
   <head>
     <title>Clojure Group Hamburg</title>
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
-    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link rel="stylesheet" type="/text/css" href="css/common.css" />
+    <link rel="stylesheet" type="/text/css" href="css/index.css" />
     <script type="text/javascript" src="/js/livereload/content.js"></script>
     <script type="text/javascript" src="/js/livereload/background.js"></script>
     <script type="text/javascript" src="/js/livereload/livereload.js"></script>
+    <script type="text/javascript" src="/js/modernizr.js"></script>
   </head>
   <body id="index">
-    <section id="header">
+    <div id="wholeSite">
+    <header id="topheader">
+        <div id="header">
+            <img src="/img/clojure-icon.gif" id="logo"/>
+            <h2>Clojure Group Hamburg</h2>
+            <script type="text/javascript">
+                livereload.run();
+            </script>
+        </div>
+    </header>
+    
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Meetings</a></li>
+            <li><a href="#">Polls</a></li>
+            <li><a href="#">Clojurians</a></li>
+        </ul>
+    </nav>
+    <br class="clearright"/>
+    
+    <section id="middle">  
+    
+        <aside id="sidebar">
+          <h4 id="nextmeeting">next meeting: 21.09.2011</h4>
+          <table id="nextmeeting_details">
+              <tr>
+                  <td class="tc_caption">location:</td>
+                  <td id="nextmeeting_location">freiheit.com</td>
+              </tr>
+              <tr>
+                  <td class="tc_caption">when:</td>
+                  <td id="nextmeeting_time">7:00 pm</td>
+              </tr>
+              <tr>
+                  <td class="tc_caption">topics:</td>
+                  <td id="nextmeeting_topics">Clojurescript and Google AppEngine</td>
+              </tr>
+          </table>
+        </aside>
+    
+        <article id="main">
+          <header>
+            <h3>Welcome!</h3>
+          </header>
+          <p id="news">This is the brand new site of the Clojure Group Hamburg. If you are a Clojure hacker, please come to our meetings. We are really interested in persons with lambda calculus in mind.
+          </p>
+        </article>
+    
+        <div class="clear"></div>
     </section>
-    <h1>Wilkommen bei der Clojure Group Hamburg</h1>
-    <form id="post-broadcast" action="/broadcast" method="POST">
-      <textarea name="text"/>
-      <input type="submit" value="abschicken"/>
-    </form>
-    <ul class="broadcasts">
-      <li class="boardcast">
-        <div class="text">Lorem Ipsum</div>
-        <div class="user">example@example.com</div>
-      </li>
-    </ul>
-    <script type="text/javascript">
-      livereload.run();
-    </script>
+    
+    <footer id="footer">
+        <small>&copy; 2011, Clojure Group Hamburg</small>
+    </footer>
+    </div>  
   </body>
 </html>
