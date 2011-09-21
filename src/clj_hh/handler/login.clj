@@ -15,7 +15,7 @@
   [request google-user]
   (let [email       (user-service/get-email google-user)
         name        (user-service/get-nickname google-user)
-        user-result (user/create-and-save-user! email name)]
+        user-result (user/create-and-save-user! email name nil nil nil)]
     (if (return-value/success? user-result)
       (response/redirect "/login")
       (response/redirect "/error"))))

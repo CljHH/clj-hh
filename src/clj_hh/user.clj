@@ -1,9 +1,10 @@
 (ns clj-hh.user
   (:require
    [appengine-magic.services.datastore :as datastore-service]
-   [clj-hh.return-value :as return-value]))
+   [clj-hh.return-value :as return-value]
+   [clj-hh.utils.time :as time]))
 
-(datastore-service/defentity User [^:key email name])
+(datastore-service/defentity User [^:key email name occupation description github-account last-active])
 
 (def ^{:private true
        :added   0.1
@@ -29,8 +30,8 @@
 (defn ^{:added 0.1
         :doc   "Creates and saves an user."}
   create-and-save-user!
-  ([email name]
-     (return-value/success (datastore-service/save! (User. email name)))))
+  ([email name occupation description github-account]
+     (return-value/success (datastore-service/save! (User. email name occupation description github-account (time/make-timestamp))))))
 
 (defn ^{:added 0.1
         :doc   "Fetches the user with the specified email from the datastore."}
