@@ -7,10 +7,11 @@
    [clj-hh.utils.time :as time]
    [net.cgrand.enlive-html :as html]))
 
-(html/defsnippet broadcast-snippet "templates/index.html" [:ul.broadcasts]
+(html/defsnippet broadcast-snippet "templates/index.html" [:ul.broadcasts :li.broadcast]
   [broadcast]
   [:div.text] (html/content (:text broadcast))
-  [:div.user] (html/content (:user broadcast)))
+  [:div.user] (html/content (str (:user broadcast) " broadcasted"))
+  [:div.time] (html/content (:time broadcast)))
 
 (html/deftemplate render-index "templates/index.html"
   [broadcasts next-meeting logged-in?]

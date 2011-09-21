@@ -42,21 +42,36 @@
 
 
         <aside id="sidebar">
-          <h4 id="nextmeeting">next meeting: 21.09.2011</h4>
-          <table id="nextmeeting_details">
+          <div id="comingup">
+            <h4 id="nextmeeting">next meeting: 21.09.2011</h4>
+            <table id="nextmeeting_details">
               <tr>
-                  <td class="tc_caption">location:</td>
-                  <td id="nextmeeting_location">freiheit.com</td>
+                <td class="tc_caption">location:</td>
+                <td id="nextmeeting_location">freiheit.com</td>
               </tr>
               <tr>
-                  <td class="tc_caption">when:</td>
-                  <td id="nextmeeting_time">7:00 pm</td>
+                <td class="tc_caption">when:</td>
+                <td id="nextmeeting_time">7:00 pm</td>
               </tr>
               <tr>
-                  <td class="tc_caption">topics:</td>
-                  <td id="nextmeeting_topics">Clojurescript and Google AppEngine</td>
+                <td class="tc_caption">topics:</td>
+                <td id="nextmeeting_topics">Clojurescript and Google AppEngine</td>
               </tr>
-          </table>
+            </table>
+          </div>
+
+          <form id="postbroadcast" action="/broadcast" method="POST">
+            <textarea name="text"/>
+            <input type="submit" value="submit"/>
+          </form>
+          <ul class="broadcasts">
+            <li class="broadcast">
+              <div class="time">Mi 21.09.2011</div>
+              <div class="user">example@example.com</div>
+              <div class="text">Lorem Ipsum</div>
+            </li>
+          </ul>
+
         </aside>
 
     </section>

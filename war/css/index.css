@@ -1,98 +1,134 @@
 #wholeSite {
-	width: 70%;
-	margin-left: auto;
-	margin-right: auto;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
 #logo {
-	float: right;
+    float: right;
 }
 
 #topheader {
-	text-align: left;
-	color: #00aad3;
-	height: 60px;
+    text-align: left;
+    color: #00aad3;
+    height: 60px;
 }
 
 #topheader h2 {
-	text-align: left;
-	padding-top: 0.5em;
+    text-align: left;
+    padding-top: 0.5em;
 }
 
 body {
-	width:  100%;
-	text-align: center;
-	font: 1em/1.1 'Open Sans', Arial;
+    width:  100%;
+    text-align: center;
+    font: 1em/1.1 'Open Sans', Arial;
 }
 
 #navbar {
-	background-color: #79aad3;
-	padding-top: 0.1em;
-	padding-bottom: 0.1em;
+    background-color: #79aad3;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
 }
 
 #navbar ul {
-	list-style-type: none;
-	text-align: left;
+    list-style-type: none;
+    text-align: left;
 }
 
 #navbar li {
-	display: inline;
+    display: inline;
 }
 
 #navbar a {
-	text-decoration: none;
-	padding-right: 10 px;
-	color: #fffeff;
+    text-decoration: none;
+    padding-right: 10 px;
+    color: #fffeff;
 }
 
 #sidebar {
-        display: inline-block;
-	width : 350 px;
-	border-style: none;
-	text-align: center;
-	padding-left: 5px;
-	background-color: #dcffc8;
-	color: #000;
-	margin-left: 10px;
+    float: right;
+    display: inline-block;
+    width : 350px;
+    border-style: none;
+    text-align: center;
+    padding-left: 5px;
+    color: #000;
+    margin-left: 10px;
+}
+
+#comingup {
+    background-color: #dcffc8;
 }
 
 .clearright {
-	clear: rigth;
+    clear: rigth;
 }
 
 #middle {
-	text-align: left;
-	padding-left: 40 px;
-	clear: right;
+    height: 550px;
+    text-align: left;
+    padding-left: 40 px;
+    clear: right;
 }
 
 #main {
-        display: inline-block;
-        width: 700px;
+    display: inline-block;
+    width: 700px;
 }
 
 
 
 #footer {
-	position: relative;
-	padding-top: 2 px;
-	padding-bottom: 2 px;
-	padding-left: 40 px;
-	bottom: 10px;
-	text-align: left;
-	background-color: #79aad3;
-	top: 100px;
-	color: #a9d6fd;
+    position: relative;
+    padding-top: 2 px;
+    padding-bottom: 2 px;
+    padding-left: 40 px;
+    bottom: 10px;
+    text-align: left;
+    background-color: #79aad3;
+    top: 100px;
+    color: #a9d6fd;
 }
 
 #nextmeeting_details {
-	color: #000;
+    color: #000;
 }
 
 .tc_caption {
-	text-align: left;
-	vertical-align: text-top;
-	font-weight: bold;
+    text-align: left;
+    vertical-align: text-top;
+    font-weight: bold;
+}
+
+.broadcasts {
+    padding: 5px;
+    margin: 0;
+    background-color: #EEE;
+}
+.broadcasts .broadcast {
+    list-style: none;
+    text-align: left;
+}
+.broadcasts .broadcast .time {
+    font-size: 10px;
+    display: inline-block;
+    color: #999;
+}
+.broadcasts .broadcast .user {
+    font-size: 12px;
+    display: inline-block;
+    color: #666;
+}
+
+#postbroadcast {
+    margin: 10px 0 0 0;
+    background-color: #EEE;
+    padding: 5px;
+    vertical-align: top;
+    text-align: left;
+}
+#postbroadcast textarea{
+    width: 340px;
 }

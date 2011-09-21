@@ -8,5 +8,5 @@
   [request]
   (let [text      (get-in request [:params "text"])
         user      (session/current-user request)
-        broadcast (broadcast/create-and-save-broadcast! text (get user :name))]
+        broadcast (broadcast/create-and-save-broadcast! text (get user :email))]
     (response/redirect "/")))
