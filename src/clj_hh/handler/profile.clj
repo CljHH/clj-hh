@@ -10,5 +10,5 @@
    [:div.occupation :span.value] (html/content (:occupation user))
    [:div.description :span.value] (html/content (:description user))
    [:div.github :span.value] (html/content (:github user))
-   [:div.last_active :span.value] (html/content (:last_active user)))
+   [:div.last_active :span.value] (html/content (:last-active user)))
 
