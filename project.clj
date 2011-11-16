@@ -10,6 +10,5 @@
   :dev-dependencies [[appengine-magic "0.4.3"]
                      [swank-clojure "1.4.0-SNAPSHOT"]
                      [ring-mock "0.1.1"]
+                     [lein-midje "1.0.4"]
                      [midje "1.2.0"]])
-
-
