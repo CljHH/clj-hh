@@ -2,8 +2,7 @@
   (:use clojure.test
         midje.sweet
         ring.mock.request)
-  (:require [compojure.route :as route])
-  (:require [net.cljhh.core  :as core]))
+  (:require [compojure.route :as route]))
 
 (def *undefined-response* ((route/not-found "foo") (request :get "/")))
 
