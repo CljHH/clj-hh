@@ -34,6 +34,12 @@
      (return-value/success (datastore-service/save! (User. email name occupation description github-account (time/make-timestamp))))))
 
 (defn ^{:added 0.1
+        :doc   "Updates the user."}
+  update-user!
+  ([user params]
+     (return-value/success (datastore-service/save! (merge user params {"last-active" (time/make-timestamp)})))))
+
+(defn ^{:added 0.1
         :doc   "Fetches the user with the specified email from the datastore."}
   get-by-email
   [email]

@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Profile</title>
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <script type="text/javascript" src="/js/livereload/content.js"></script>
+    <script type="text/javascript" src="/js/livereload/background.js"></script>
+    <script type="text/javascript" src="/js/livereload/livereload.js"></script>
+  </head>
+  <body id="index">
+    <section id="header">
+    </section>
+    <h1>Profile</h1>
+
+    <form action="/profile" method="POST">
+      <div class="name"><span>Name: </span><span class="value"><input name="name" value="foo"></input></span></div>
+      <div class="email"><span>Email: </span><span class="value"><input name="email" disabled="disabled"></input></span></div>
+      <div class="occupation"><span>Tätigkeit: </span><span class="value"><input name="occupation"></input></span></div>
+      <div class="description"><span>Kommentar: </span><span class="value"><textarea name="description"></input></span></div>
+      <div class="github"><span>github-Account: </span><span class="value"><input name="github"></input></span></div>
+      <div class="last-active"><span>Aktiv: </span><span class="value"></span></div>
+      <button type="submit">Speichern</submit>
+    </form>
+
+    <script type="text/javascript">
+      livereload.run();
+    </script>
+  </body>
+</html>
